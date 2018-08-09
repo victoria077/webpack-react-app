@@ -2,6 +2,9 @@
 
 import React, {Component  } from "react";
 import axios from 'axios';
+//import from "./index.css";
+
+
 
 class Signup extends Component {
     baseUrl = "http://localhost:5000/";
@@ -33,17 +36,22 @@ class Signup extends Component {
 
     render(){
         return (
-            <form onSubmit={this.handleSubmit}>
-                <label>
-                    login:
-                        <input type="text" name="login" onChange={this.handleInputChange}/>    
-                 </label> 
-                 <label>
-                    password:
-                        <input type="text" name="password" onChange={this.handleInputChange}/>    
-                 </label>  
-                 <input type="submit" value="Submit" />    
-             </form>   
+            <div className="bs-example" >
+            <form action="/examples/actions/confirmation.php" method="post" >
+                <div className="form-group">
+                    <label htmlFor="inputEmail">Email</label>
+                    <input type="email" className="form-control" id="inputEmail" placeholder="Email" required />
+                </div>
+                <div className="form-group">
+                    <label htmlFor="inputPassword">Password</label>
+                    <input type="password" className="form-control" id="inputPassword" placeholder="Password" required />
+                </div>
+                <div className="checkbox">
+                    <label><input type="checkbox" /> Remember me</label>
+                </div>
+                <button type="submit" className="btn btn-primary">Login</button>
+            </form>
+        </div>  
         );
     }
 }

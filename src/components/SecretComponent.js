@@ -20,7 +20,7 @@ export default class SecretComponent extends Component {
   render() {
     return (
       <div>
-        <button onClick={this.checkUser} > "Push me"</button>
+        <button className="btn btn-primary" onClick={this.checkUser} > "Push me"</button>
       </div>
     )
   }

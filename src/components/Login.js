@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Navbar} from 'reactstrap';
 
 export default class Login extends Component {
   baseUrl = "http://localhost:5000/";
@@ -32,18 +33,20 @@ export default class Login extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      
+      <form onSubmit={this.handleSubmit} >
       <h1>Login Page</h1>
         <label>
           login:
-        <input type="text" name="login" onChange={this.handleInputChange} />
+        <input type="text"  className="form-control" name="login" onChange={this.handleInputChange} />
         </label>
         <label>
           password:
-        <input type="text" name="password" onChange={this.handleInputChange} />
+        <input type="password" name="password" className="form-control" onChange={this.handleInputChange} />
         </label>
-        <input type="submit" value="Submit" />
+        <input type="submit"   className="btn btn-info" value="Submit Button" />
       </form>
+      
     )
   }
 }
