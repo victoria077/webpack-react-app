@@ -1,13 +1,13 @@
 {
   "name": "react_webpack_starter",
   "version": "1.0.0",
-  "description": "Boilerplate for React apps",
+  "description": "Webpack - React apps",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot",
     "build": "webpack --mode production"
   },
-  "author": "Brad Traversy",
+  "author": "ViktoriaS",
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
