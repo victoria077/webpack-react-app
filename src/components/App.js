@@ -4,7 +4,7 @@ import Signup from "./Signup"
 import Login from "./Login"
 import SecretComponent from './SecretComponent';
 import TestComponent from './TestComponent';
-import Logout from './Logout';
+
 
 class App extends Component {
 
@@ -16,8 +16,6 @@ class App extends Component {
                     <Route path="/login" component={Login} />
                     <Route path="/secretpage" component={SecretComponent} />
                     <Route path="/testpage" component={TestComponent} />
-                    <Route path="/logout" component={Logout} />
-                    
                 </div>
             </Router>
         );

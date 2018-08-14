@@ -4,11 +4,11 @@ import config from '../config';
 
 
 export default class Login extends Component {
-  
+
   constructor(props) {
     super(props);
     this.state = { login: '', password: '' };
-    
+
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,35 +28,35 @@ export default class Login extends Component {
         localStorage.setItem("name", resp.data.name);
 
         window.location = "/secretpage";
-        console.log("yehooo") ;
-      }).catch(error =>{
-        alert("error " )
+        console.log("yehooo");
+      }).catch(error => {
+        alert("error ")
       })
     event.preventDefault();
   }
 
   render() {
-    return( 
-    
-      
-  
-      
+    return (
+
+
+
+
 
       <div className="row h-100 justify-content-center">
 
-      <form className="form-group col-md-4 " onSubmit={this.handleSubmit}>
-      <h2>Login</h2>
+        <form className="form-group col-md-4 " onSubmit={this.handleSubmit}>
+          <h2>Login</h2>
 
-      <label>Email address</label>
-              <input type="text" className="form-control" name="login" onChange={this.handleInputChange}/>    
-      <label >Password</label>
-              <input type="text"className="form-control"  name="password" onChange={this.handleInputChange}/>    
-         <div className = "text-center">  
-       <button type="submit" className="btn btn-primary">Submit</button>   
-       </div>
-   </form>   
-   </div>
-   
+          <label>Email address</label>
+          <input type="text" className="form-control" name="login" onChange={this.handleInputChange} />
+          <label >Password</label>
+          <input type="text" className="form-control" name="password" onChange={this.handleInputChange} />
+          <div className="text-center">
+            <button type="submit" className="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+
     )
   }
 }
