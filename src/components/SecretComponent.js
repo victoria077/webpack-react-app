@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import Logout from './Logout';
 
 export default class SecretComponent extends Component {
-  
-  checkUser() {
+  constructor(props){
+    super(props)
+    this.state = { label: ""};
+   
+  }
+  componentWillMount() {
+   
+    
     let conf = {
       headers: { 'Authorization': localStorage.getItem("token_id")
       }
@@ -11,7 +18,9 @@ export default class SecretComponent extends Component {
 
    axios.get("http://localhost:5000/api/account/checksecretuser", conf)
     .then(ok =>{ 
-      alert("Submit" )
+     
+     this.setState({label: "Hello, Mr/Ms" + " " + ok.data});
+    
           }).catch(error =>{
       alert("Error" )
     })
@@ -20,7 +29,14 @@ export default class SecretComponent extends Component {
   render() {
     return (
       <div>
-        <button className="btn btn-primary" onClick={this.checkUser} > "Push me"</button>
+        
+        <nav class="navbar navbar-light bg-light justify-content-between">
+  <div>{this.state.label}</div>
+  
+   
+  <Logout />
+  
+</nav>
       </div>
     )
   }

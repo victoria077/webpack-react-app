@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Navbar} from 'reactstrap';
+import config from '../config';
+
 
 export default class Login extends Component {
-  baseUrl = "http://localhost:5000/";
+  
   constructor(props) {
     super(props);
     this.state = { login: '', password: '' };
+    
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -17,14 +19,16 @@ export default class Login extends Component {
   }
 
   handleSubmit(event) {
-    axios.post(this.baseUrl + "api/account/signin",
+    axios.post(config.baseUrl + "api/account/signin",
       {
         UserName: this.state.login,
         UserPassword: this.state.password
       }).then(resp => {
-        localStorage.setItem("token_id", resp.data);
+        localStorage.setItem("token_id", resp.data.token);
+        localStorage.setItem("name", resp.data.name);
 
-        window.location = "/secretpage"
+        window.location = "/secretpage";
+        console.log("yehooo") ;
       }).catch(error =>{
         alert("error " )
       })
@@ -32,21 +36,27 @@ export default class Login extends Component {
   }
 
   render() {
-    return (
+    return( 
+    
       
-      <form onSubmit={this.handleSubmit} >
-      <h1>Login Page</h1>
-        <label>
-          login:
-        <input type="text"  className="form-control" name="login" onChange={this.handleInputChange} />
-        </label>
-        <label>
-          password:
-        <input type="password" name="password" className="form-control" onChange={this.handleInputChange} />
-        </label>
-        <input type="submit"   className="btn btn-info" value="Submit Button" />
-      </form>
+  
       
+
+      <div className="row h-100 justify-content-center">
+
+      <form className="form-group col-md-4 " onSubmit={this.handleSubmit}>
+      <h2>Login</h2>
+
+      <label>Email address</label>
+              <input type="text" className="form-control" name="login" onChange={this.handleInputChange}/>    
+      <label >Password</label>
+              <input type="text"className="form-control"  name="password" onChange={this.handleInputChange}/>    
+         <div className = "text-center">  
+       <button type="submit" className="btn btn-primary">Submit</button>   
+       </div>
+   </form>   
+   </div>
+   
     )
   }
 }

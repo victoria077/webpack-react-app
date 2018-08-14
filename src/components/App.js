@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Signup from "./Signup"
 import Login from "./Login"
 import SecretComponent from './SecretComponent';
-import BootstrapComponent from './Bootstrap';
+import TestComponent from './TestComponent';
+import Logout from './Logout';
 
 class App extends Component {
 
@@ -14,7 +15,9 @@ class App extends Component {
                     <Route exact path="/" component={Signup} />
                     <Route path="/login" component={Login} />
                     <Route path="/secretpage" component={SecretComponent} />
-                    <Route path="/bootstrap" component={BootstrapComponent} />
+                    <Route path="/testpage" component={TestComponent} />
+                    <Route path="/logout" component={Logout} />
+                    
                 </div>
             </Router>
         );

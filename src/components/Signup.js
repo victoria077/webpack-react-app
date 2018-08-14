@@ -2,8 +2,7 @@
 
 import React, {Component  } from "react";
 import axios from 'axios';
-//import from "./index.css";
-
+import  "./index.css";
 
 
 class Signup extends Component {
@@ -27,7 +26,7 @@ class Signup extends Component {
             
             UserPassword: this.state.password
     }).then(resp => {
-        window.location =  "/login" 
+         window.location =  "/login"       
     }).catch(error => {
         alert("error" )
     })
@@ -36,22 +35,21 @@ class Signup extends Component {
 
     render(){
         return (
-            <div className="bs-example" >
-            <form action="/examples/actions/confirmation.php" method="post" >
-                <div className="form-group">
-                    <label htmlFor="inputEmail">Email</label>
-                    <input type="email" className="form-control" id="inputEmail" placeholder="Email" required />
-                </div>
-                <div className="form-group">
-                    <label htmlFor="inputPassword">Password</label>
-                    <input type="password" className="form-control" id="inputPassword" placeholder="Password" required />
-                </div>
-                <div className="checkbox">
-                    <label><input type="checkbox" /> Remember me</label>
-                </div>
-                <button type="submit" className="btn btn-primary">Login</button>
-            </form>
-        </div>  
+      
+            <div className="row h-100 justify-content-center">
+
+            <form className="form-group col-md-4 " onSubmit={this.handleSubmit}>
+            <h2>Register</h2>
+
+            <label>Email address</label>
+                    <input type="text" className="form-control" name="login" onChange={this.handleInputChange}/>    
+            <label >Password</label>
+                    <input type="text"className="form-control"  name="password" onChange={this.handleInputChange}/>    
+               <div className = "text-center">  
+             <button type="submit" className="btn btn-primary">Submit</button>   
+             </div>
+         </form>   
+         </div>
         );
     }
 }
