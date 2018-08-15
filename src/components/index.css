@@ -1,3 +1,17 @@
+.bgcolor{
+    background-color: #0d47a1;
+    
+}
+
+.txdecor{
+    color: #1E90FF;
+}
+
+.tx{
+    font-size: 25px;
+    
+}
+
 .btn{
     margin: 10px;
 } 
@@ -5,4 +19,9 @@
 
 .primary{
     color: green;
+}
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
 }

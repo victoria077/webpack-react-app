@@ -1,13 +1,8 @@
-
-
 import React, { Component } from "react";
 import axios from 'axios';
 import "./index.css";
 import config from '../config';
-
-
 class Signup extends Component {
-
     constructor(props) {
         super(props);
         this.state = { login: "", password: "" };
@@ -36,16 +31,15 @@ class Signup extends Component {
 
     render() {
         return (
-
-            <div className="row h-100 justify-content-center">
-                <form className="form-group col-md-4 " onSubmit={this.handleSubmit}>
+            <div className="row ">
+                <form className="form-group col-md-3 col-centered " onSubmit={this.handleSubmit}>
                     <h2>Register</h2>
                     <label>Email address</label>
                     <input type="text" className="form-control" name="login" onChange={this.handleInputChange} />
                     <label >Password</label>
                     <input type="text" className="form-control" name="password" onChange={this.handleInputChange} />
                     <div className="text-center">
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                        <button type="submit" className="btn btn-primary">Submit</button>
                     </div>
                 </form>
             </div>

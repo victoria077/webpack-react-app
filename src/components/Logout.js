@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-
+import "./index.css";
 
 class Logout extends Component {
-
     constructor(props) {
         super(props);
-        this.state = {
-            name: localStorage.getItem("name")
-          }
+        this.handleLogout = this.handleLogout.bind(this);
     }
-    
     render() {
         return (
-            <button className="btn-primary" onClick={this.handleLogout}>Logout</button>
+            <div  onClick={this.handleLogout} className =" txdecor">Logout</div>
         );
     }
-
     handleLogout() {
-        // localStorage.clear();
+        localStorage.clear();
         window.location = "/"
     }
 }
