@@ -3,6 +3,7 @@ import axios from 'axios';
 import Logout from './Logout';
 import "./index.css";
 import { NavDropdown, Navbar, MenuItem, Nav } from 'react-bootstrap';
+import Sidebar from './Sidebar';
 export default class SecretComponent extends Component {
   constructor(props) {
     super(props)
@@ -19,7 +20,7 @@ export default class SecretComponent extends Component {
     }
     axios.get("http://localhost:5000/api/account/checksecretuser", conf)
       .then(ok => {
-        this.setState({ label: "Hello, Mr/Ms" + " " + ok.data });
+        this.setState({ label: "Hello, Ms" + " " + ok.data });
       }).catch(error => {
         alert("Error")
       })
@@ -27,13 +28,16 @@ export default class SecretComponent extends Component {
 
   render(title, i) {
     return (
-      <Navbar className="bgcolor ">
-        <Nav className="tx">
-          <NavDropdown  title={this.state.label}>
+      <div className="wrapper">
+       <Navbar className="bgcolor ">
+        <Nav id="tx">
+          <NavDropdown  id="namestyle" title={this.state.label}>
             <MenuItem><Logout /></MenuItem>
           </NavDropdown>
         </Nav>
-      </Navbar>
+      </Navbar> 
+      <Sidebar/>
+      </div>
 
 
 

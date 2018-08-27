@@ -34,14 +34,14 @@ export default class Login extends Component {
   render() {
     return (
       <div className="row">
-        <form className="form-group col-md-3 col-centered " onSubmit={this.handleSubmit}>
+        <form className="form-group col-md-6 col-centered " onSubmit={this.handleSubmit}>
           <h2>Login</h2>
           <label>Email address</label>
           <input type="text" className="form-control" name="login" onChange={this.handleInputChange} />
           <label >Password</label>
           <input type="text" className="form-control" name="password" onChange={this.handleInputChange} />
           <div className="text-center">
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="btn">Submit</button>
           </div>
         </form>
       </div>
