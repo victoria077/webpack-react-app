@@ -38,11 +38,6 @@ export default class SecretComponent extends Component {
       </Navbar> 
       <Sidebar/>
       </div>
-
-
-
-
-
     )
   }
 }

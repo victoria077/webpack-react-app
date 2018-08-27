@@ -104,8 +104,7 @@ main {
   height: 93%;
   width: 350px;
   position: absolute;
-   top: -11px; 
-
+   top: -11px;
   z-index: 1;
   right: 0;
   background-color: #EF8354;
